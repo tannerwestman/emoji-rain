@@ -12,7 +12,27 @@
 </head>
 <body style="background: #000;">
 <canvas id="drawing" ></canvas>
-<script src="emoji.js"></script>
+
+ <audio src="${ 'rain-06.mp3' }" id="audio"></audio>
+<i class="glyphicon glyphicon-play-circle b-play" id="play" onclick="play()"></i>
+
+<script>
+    function play() {
+        var audio = document.getElementById('audio');
+        if (audio.paused) {
+            audio.play();
+            $('#play').removeClass('glyphicon-play-circle')
+            $('#play').addClass('glyphicon-pause')
+        }else{
+            audio.pause();
+            audio.currentTime = 0
+            $('#play').addClass('glyphicon-play-circle')
+            $('#play').removeClass('glyphicon-pause')
+        }
+    }
+</script>
+ 
+ <script src="emoji.js"></script>
  <script type="text/javascript"> 
  
   var audio = new Audio('rain-06.mp3');
